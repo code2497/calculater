@@ -3,10 +3,7 @@ package com.calculater.demo;
 import java.util.Stack;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * IntelliJ IDEA 17
- * Created by Pramy on 2018/9/16.
- */
+
 public class Expression implements Cloneable {
 
 
@@ -214,6 +211,7 @@ public class Expression implements Cloneable {
         ThreadLocalRandom random = ThreadLocalRandom.current();
         int b ;
         if (random.nextBoolean()) {
+            // 整数
             return new Fraction(random.nextInt(bound), 1);
         } else {
             if (random.nextBoolean()) {

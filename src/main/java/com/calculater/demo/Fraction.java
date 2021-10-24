@@ -1,10 +1,5 @@
 package com.calculater.demo;
 
-
-/**
- * IntelliJ IDEA 18
- * Created by Pramy on 2018/9/16.
- */
 public class Fraction {
 
     /**
