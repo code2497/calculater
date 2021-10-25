@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="calculater" />
         <module name="my-calculater" />
+        <module name="calculater" />
       </profile>
     </annotationProcessing>
   </component>

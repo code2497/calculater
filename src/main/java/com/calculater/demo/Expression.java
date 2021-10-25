@@ -283,12 +283,14 @@ public class Expression implements Cloneable {
         String left = print(node.left);
 
         String mid = node.toString();
+        //随机生成括号
         if (node.left instanceof SymbolNode && node instanceof SymbolNode) {
             if (leftBrackets(((SymbolNode) node.left).symbol, ((SymbolNode) node).symbol)) {
                 left = LEFT_BRACKETS + " " + left + " " + RIGHT_BRACKETS;
             }
         }
         String right = print(node.right);
+        //随机生成括号
         if (node.right instanceof SymbolNode && node instanceof SymbolNode) {
             if (rightBrackets(((SymbolNode) node.right).symbol, ((SymbolNode) node).symbol)) {
                 right = LEFT_BRACKETS + " " + right + " " + RIGHT_BRACKETS;

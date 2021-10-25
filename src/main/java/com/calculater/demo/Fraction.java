@@ -14,10 +14,10 @@ public class Fraction {
 
     public Fraction(String string) {
         string = string.trim();
-
         int a, b;
         int cc = string.indexOf("'");
         int bb = string.indexOf("/");
+        //将带分数转换成假分数
         if (cc != -1) {
             int c = Integer.valueOf(string.substring(0, cc));
             b = Integer.valueOf(string.substring(bb + 1));
@@ -45,68 +45,41 @@ public class Fraction {
         a = Math.abs(a);
         b = Math.abs(b);
         int c = gcd(a, b);
-        //保证只有a才会小于0
+        //保证只有a才会小于0，使判断分数正负更容易
         this.a = a / c * isNegative;
         this.b = b / c;
     }
 
-
-    /**
-     * 加法 a + b
-     *
-     * @param fraction b
-     * @return a - b
-     */
+    // 加法 a + b
     public Fraction add(Fraction fraction) {
         return new Fraction(this.a * fraction.b + fraction.a * this.b,
                 this.b * fraction.b);
     }
 
-    /**
-     * 减法 a - b
-     *
-     * @param fraction b
-     * @return a - b
-     */
+    //减法 a - b
     public Fraction subtract(Fraction fraction) {
         return new Fraction(this.a * fraction.b - fraction.a * this.b,
                 this.b * fraction.b);
     }
 
-    /**
-     * 乘法 a x b
-     *
-     * @param fraction b
-     * @return a x b
-     */
+     //乘法 a x b
     public Fraction multiply(Fraction fraction) {
         return new Fraction(this.a * fraction.a,
                 this.b * fraction.b);
     }
 
-    /**
-     * 除法 a / b
-     *
-     * @param fraction b
-     * @return a / b
-     */
+    //除法 a / b
     public Fraction divide(Fraction fraction) {
         return new Fraction(this.a * fraction.b, b * fraction.a);
     }
 
-    /**
-     * 绝对值
-     */
+    //绝对值
     public void abs() {
         this.a = Math.abs(this.a);
         this.b = Math.abs(this.b);
     }
 
-    /**
-     * 是否是负数
-     *
-     * @return a < 0
-     */
+    //是否是负数
     public boolean isNegative() {
         return a < 0;
     }
@@ -115,6 +88,8 @@ public class Fraction {
         int mod = a % b;
         return mod == 0 ? b : gcd(b, mod);
     }
+
+
 
     @Override
     public boolean equals(Object o) {
